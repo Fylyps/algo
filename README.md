@@ -1,4 +1,4 @@
 algo
 ====
 
-popular algorithms implemented in Python
+popular algorithms implemented in C
