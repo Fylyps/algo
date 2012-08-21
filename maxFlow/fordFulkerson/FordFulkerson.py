@@ -1,5 +1,11 @@
-import sys
+import sys, os
 
+pjoin = os.path.sep.join
+my_path = os.path.dirname(__file__)
+print my_path
+libpath = pjoin(['.','..'])
+sys.path.append(libpath)
+import network
 from network.Network import Network
 
 
