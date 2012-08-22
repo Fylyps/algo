@@ -1,4 +1,4 @@
-from common.scanf import scanf
+from common.scanf import fscanf
 
 class Network():
 
@@ -24,6 +24,11 @@ class Network():
 			self.c[v][w] += minc
 			self.c[w][v] -= minc
 
+	def appendFlow(self, flow):
+		for a in xrange(self.n):
+			for b in xrange(self.n):
+				self.c[a][b] += flow.c[a][b]
+
 	def substract(self, flow):
 		residual = Network(self.n)
 		for a in xrange(self.n):
@@ -34,10 +39,10 @@ class Network():
 	def sumFlow(self, v):
 		return sum(self.c[v])
 
-	def read(self):
-		n, m = scanf("%d %d")
+	def read(self, f):
+		n, m = fscanf(f, "%d %d")
 		self.__init__(n)	
 		for i in xrange(m):
-			a, b, c = scanf("%d %d %d")
+			a, b, c = fscanf(f, "%d %d %d")
 			self.setFlow(a, b, c)
 

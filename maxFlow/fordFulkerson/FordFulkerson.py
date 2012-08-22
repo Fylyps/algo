@@ -3,7 +3,7 @@ import sys, os
 pjoin = os.path.sep.join
 my_path = os.path.dirname(__file__)
 print my_path
-libpath = pjoin(['.','..'])
+libpath = pjoin([os.path.dirname(__file__),'..'])
 sys.path.append(libpath)
 import network
 from network.Network import Network
@@ -30,8 +30,4 @@ def fordFulkerson(net):
 		minc, path = findExtendingPath(residual)
 	return flow
 
-
-net = Network()
-net.read()
-print fordFulkerson(net).sumFlow(0)
 

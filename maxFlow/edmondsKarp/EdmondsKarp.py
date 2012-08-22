@@ -33,7 +33,3 @@ def edmondsKarp(net):
 		minc, path = findShortestExtendingPath(residual)
 	return flow
 
-net = Network()
-net.read()
-
-print edmondsKarp(net).sumFlow(0)
